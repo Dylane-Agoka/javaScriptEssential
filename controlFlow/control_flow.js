@@ -2,7 +2,7 @@ let userRole = 'admin';
 let accessLevel;
 
 if (userRole === 'admin') {
-    accessLevel = 'Full access grandted';
+    accessLevel = 'Full access granted';
 } else if (userRole === 'manager') {
     accessLevel = 'Limited access granted';
 } else {
@@ -50,3 +50,32 @@ let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? 'Authenticated' : 'Not authenticated';
 
 console.log('Authentication Status:', authenticationStatus);
+
+// Practice task  : Dietary Services
+let dietaryUserType = 'nonSubscriber'; // employee, enrolledMember, subscriber, nonSubscriber (need to enroll or at least subscribe first to avail this facility)
+let dietaryUserCategory; // Employee, Enrolled Member, Subscriber, Non-Subscriber
+let dietaryAccessLevel;
+
+switch (dietaryUserType) {
+    case 'employee':
+        dietaryUserCategory = 'Employee';
+        dietaryAccessLevel = 'Access granted to Dietary Services';
+        break;
+    case 'enrolledMember':
+        dietaryUserCategory = 'Enrolled Member';
+        dietaryAccessLevel = 'Access granted to Dietary Services and one-on-one interaction with a dietician.';
+        break;
+    case 'subscriber':
+        dietaryUserCategory = 'Subscriber';
+        dietaryAccessLevel = 'Partial access granted to facilitate Dietary Services only.';
+        break;
+    case 'nonSubscriber':
+        dietaryUserCategory = 'Non-Subscriber';
+        dietaryAccessLevel = 'No access granted : Need to enroll or at least subscribe first to avail this facility.';
+        break;
+    default:
+        dietaryUserCategory = 'ERROR';
+        dietaryAccessLevel = 'System error, please contact the support team';
+}
+
+console.log('Access Level:', dietaryUserCategory + ', ' + dietaryAccessLevel);
