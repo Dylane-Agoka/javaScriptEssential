@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelectorAll Example</title>
+</head>
+<body>
+  <h1>querySelectorAll Example</h1>
+  <p class="highlighted">This is a highlighted paragraph.</p>
+  <p class="highlighted">This is another highlighted paragraph.</p>
+  <p id="my-paragraph">This is a paragraph with an ID.</p>
+  <p>This a regular paragraph.</p>
+  <script>
+    console.log('Selecting by Class .highlighted');
+    console.log(document.querySelectorAll('.highlighted'));
+
+    console.log('Selecting by ID #my-paragraph');
+    console.log(document.querySelectorAll('#my-paragraph'));
+
+    console.log('Selecting by Tag Name p');
+    console.log(document.querySelectorAll('p'));
+  </script>
+</body>
+</html>

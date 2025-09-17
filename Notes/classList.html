@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClassList</title>
+  <style>
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+    .italic {
+      font-style: italic;
+    }
+    .underline {
+      text-decoration: underline;
+    }
+    .strike {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <h1>ClassList</h1>
+  <p id="my-paragraph">This is a pragraph with ID.</p>
+
+  <p id="myParagraph" class="highlight">This is a paragraph.</p>
+  <button onclick="performClassListOperations()">Perform Operations</button>
+
+
+  <script>
+    console.log('Accessing classList');
+    const element = document.getElementById('my-paragraph');
+    console.log(element.classList);
+
+    element.classList.add('newClass','hello')
+    element.classList.remove('hello','newClass');
+    element.classList.toggle('active');
+    element.classList.contains('sepecial');
+    element.classList.replace('oldClass', 'newClass');
+    console.log(element.classList.item(0));
+    console.log(element.classList.toString);
+    console.log(element);
+
+    function performClassListOperations() {
+      const paragraph = document.getElementById('myParagraph');
+      paragraph.classList.add('italic');
+      paragraph.classList.remove('highlight');
+      paragraph.classList.toggle('underline');
+
+      const hasItalicClass = paragraph.classList.contains('italic');
+      console.log(`Has italic class: ${hasItalicClass}`);
+
+      setTimeout(() => {
+        paragraph.classList.replace('underline', 'strike');
+        const classString = paragraph.classList.toString();
+        console.log(`Current classes: ${classString}`);
+      }, 2000); // Delay for 2 seconds
+      
+    }
+  </script>
+</body>
+</html>
